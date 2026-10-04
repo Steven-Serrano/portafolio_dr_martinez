@@ -91,7 +91,7 @@
                     </ul>
 
                     <div class="navbar-actions">
-                        <a href="#contacto" class="btn btn-primary-cta">
+                        <a href="citas.html" class="btn btn-primary-cta">
                             <i class="bi bi-calendar-check me-2"></i>Solicitar Cita
                             <span class="btn-shine"></span>
                         </a>
@@ -186,7 +186,7 @@
                         </div>
 
                         <div class="hero-buttons reveal-up" data-delay="600">
-                            <a href="#contacto" class="btn btn-primary-cta btn-lg btn-glow">
+                            <a href="citas.html" class="btn btn-primary-cta btn-lg btn-glow">
                                 <i class="bi bi-calendar-check me-2"></i>Solicitar Cita
                                 <span class="btn-shine"></span>
                             </a>
@@ -1042,101 +1042,135 @@
         </section>
 
         <!-- ============================================
-             CONTACTO
-        ============================================= -->
-        <section id="contacto" class="section contact-section">
-            <div class="container">
-                <div class="row g-5 align-items-start">
-                    <div class="col-lg-5 reveal-left">
-                        <span class="section-eyebrow">
-                            <span class="eyebrow-dot"></span>
-                            Contacto
-                        </span>
-                        <h2 class="section-title">
-                            Agenda tu
-                            <span class="title-gradient">consulta</span>
-                        </h2>
-                        <p>Completa el formulario y nos pondremos en contacto contigo.</p>
-                        <ul class="contact-info-list">
-                            <li>
-                                <div class="contact-info-icon"><i class="bi bi-geo-alt-fill"></i></div>
-                                <div>
-                                    <strong>Consultorios</strong>
-                                    <span>Barranquilla · Montería · Garzón · Santa Marta</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="contact-info-icon"><i class="bi bi-envelope-fill"></i></div>
-                                <div>
-                                    <strong>Correo electrónico</strong>
-                                    <span>joseimartinezs1977@hotmail.com</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="contact-info-icon"><i class="bi bi-whatsapp"></i></div>
-                                <div>
-                                    <strong>WhatsApp</strong>
-                                    <span>Disponible para agendar citas</span>
-                                </div>
-                            </li>
-                        </ul>
+     CONTACTO Y SEDES (ACTUALIZADO)
+============================================ -->
+<section id="contacto" class="section contact-section">
+    <div class="container">
+        
+        <div class="section-header text-center reveal-up">
+            <span class="section-eyebrow">
+                <span class="eyebrow-dot"></span>
+                Contáctanos
+            </span>
+            <h2 class="section-title">
+                Estamos para <span class="title-gradient">atenderte</span>
+            </h2>
+            <p class="section-subtitle">
+                ¿Tienes dudas sobre tu tratamiento o necesitas información general? Escríbenos. 
+                <br><strong>Para agendar tu cita, haz clic en el botón superior.</strong>
+            </p>
+        </div>
+
+        <div class="row g-5 align-items-start">
+            
+            <!-- Columna Izquierda: Información y Sedes -->
+            <div class="col-lg-5 reveal-left">
+                
+                <div class="contact-info-card">
+                    <h3><i class="bi bi-geo-alt-fill"></i> Sede Principal</h3>
+                    <div class="info-item">
+                        <i class="bi bi-building"></i>
+                        <div>
+                            <strong>Consultorio Barranquilla</strong>
+                            <span>Calle 34 # 11-14, Barranquilla - Atlántico</span>
+                        </div>
                     </div>
-                    <div class="col-lg-7 reveal-right">
-                        <form class="contact-form" id="contactForm" novalidate>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="nombre" class="form-label">Nombre completo *</label>
-                                    <input type="text" class="form-control" id="nombre" required>
-                                    <div class="invalid-feedback">Ingresa tu nombre.</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="telefono" class="form-label">Teléfono *</label>
-                                    <input type="tel" class="form-control" id="telefono" required>
-                                    <div class="invalid-feedback">Ingresa un teléfono válido.</div>
-                                </div>
-                                <div class="col-12">
-                                    <label for="email" class="form-label">Correo electrónico *</label>
-                                    <input type="email" class="form-control" id="email" required>
-                                    <div class="invalid-feedback">Ingresa un correo válido.</div>
-                                </div>
-                                <div class="col-12">
-                                    <label for="motivo" class="form-label">Motivo de consulta *</label>
-                                    <select class="form-select" id="motivo" required>
-                                        <option value="" selected disabled>Selecciona una opción</option>
-                                        <option>Ortopedia y Traumatología</option>
-                                        <option>Ortopedia Infantil</option>
-                                        <option>Trauma Ortopédico</option>
-                                        <option>Fracturas</option>
-                                        <option>Pie equinovaro</option>
-                                        <option>Otro</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <label for="mensaje" class="form-label">Mensaje</label>
-                                    <textarea class="form-control" id="mensaje" rows="4"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary-cta btn-lg w-100 btn-glow">
-                                        <i class="bi bi-send-fill me-2"></i>Enviar solicitud
-                                        <span class="btn-shine"></span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="form-success" id="formSuccess" hidden>
-                                <i class="bi bi-check-circle-fill"></i>
-                                <div>
-                                    <strong>¡Solicitud enviada!</strong>
-                                    <p>Nos pondremos en contacto contigo.</p>
-                                </div>
-                            </div>
-                        </form>
+                    <div class="info-item">
+                        <i class="bi bi-envelope-fill"></i>
+                        <div>
+                            <strong>Correo electrónico</strong>
+                            <span>joseimartinezs1977@hotmail.com</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="bi bi-telephone-fill"></i>
+                        <div>
+                            <strong>Teléfono / WhatsApp</strong>
+                            <span>323 324 0233</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="bi bi-clock-fill"></i>
+                        <div>
+                            <strong>Horario de atención</strong>
+                            <span>Lunes a Viernes: 8:00 AM - 6:00 PM</span>
+                        </div>
                     </div>
                 </div>
+
+                <div class="otras-sedes mt-4">
+                    <h4><i class="bi bi-pin-map-fill"></i> Otras sedes de atención</h4>
+                    <ul class="sedes-list">
+                        <li><strong>Montería:</strong> Fundación Clínica del Río</li>
+                        <li><strong>Garzón (Huila):</strong> E.S.E. Hospital San Vicente de Paul</li>
+                        <li><strong>Santa Marta:</li>strong> [Nombre de la Clínica]</li>
+                    </ul>
+                </div>
+
             </div>
-        </section>
 
-    </main>
+            <!-- Columna Derecha: Formulario de Mensaje Rápido -->
+            <div class="col-lg-7 reveal-right">
+                <div class="contact-form">
+                    <h3><i class="bi bi-envelope-paper-fill"></i> Envíanos un mensaje</h3>
+                    <p class="form-intro">Responderemos a la brevedad posible.</p>
+                    
+                    <form id="contactForm" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="contactNombre" class="form-label">Nombre completo *</label>
+                                <input type="text" class="form-control" id="contactNombre" required>
+                                <div class="invalid-feedback">Ingresa tu nombre.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="contactEmail" class="form-label">Correo electrónico *</label>
+                                <input type="email" class="form-control" id="contactEmail" required>
+                                <div class="invalid-feedback">Ingresa un correo válido.</div>
+                            </div>
+                            <div class="col-12">
+                                <label for="contactAsunto" class="form-label">Asunto *</label>
+                                <select class="form-select" id="contactAsunto" required>
+                                    <option value="" selected disabled>Selecciona una opción</option>
+                                    <option>Información general</option>
+                                    <option>Dudas sobre tratamientos</option>
+                                    <option>Convenios empresariales</option>
+                                    <option>Otro</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="contactMensaje" class="form-label">Mensaje *</label>
+                                <textarea class="form-control" id="contactMensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                                <div class="invalid-feedback">Por favor escribe tu mensaje.</div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="contactPrivacidad" required>
+                                    <label class="form-check-label" for="contactPrivacidad">
+                                        Acepto la <a href="privacidad.html">política de tratamiento de datos</a>.
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary-cta btn-lg w-100 btn-glow">
+                                    <i class="bi bi-send-fill me-2"></i>Enviar mensaje
+                                    <span class="btn-shine"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-success" id="formSuccess" hidden>
+                            <i class="bi bi-check-circle-fill"></i>
+                            <div>
+                                <strong>¡Mensaje enviado!</strong>
+                                <p>Nos pondremos en contacto contigo muy pronto.</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
+        </div>
+    </div>
+</section>
     <!-- ============================================
          FOOTER
     ============================================= -->

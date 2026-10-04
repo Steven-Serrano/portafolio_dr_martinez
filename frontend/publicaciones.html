@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publicaciones | Dr. José Ignacio Martínez Suárez</title>
-    <meta name="description" content="Publicaciones del Dr. José Ignacio Martínez Suárez.">
+    <meta name="description" content="Publicaciones, consejos y novedades del Dr. José Ignacio Martínez Suárez sobre ortopedia y traumatología.">
 
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230B3954'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EJM%3C/text%3E%3C/svg%3E">
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    
-    <!-- Swiper.js para carruseles profesionales -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
+    <!-- Estilos -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/publicaciones.css">
@@ -33,23 +36,28 @@
                         <small>Martínez Suárez</small>
                     </span>
                 </a>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.html#especialidades">Especialidades</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.html#trayectoria">Trayectoria</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#formacion">Formación</a></li>
                         <li class="nav-item"><a class="nav-link active" href="publicaciones.html">Publicaciones</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.html#galeria">Galería</a></li>
+                        <li class="nav-item"><a class="nav-link" href="citas.html">Agendar Cita</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.html#contacto">Contacto</a></li>
                     </ul>
-                    <div class="navbar-actions">
-                        <a href="index.html#contacto" class="btn btn-primary-cta">
+
+                    <div class="navbar-actions" id="navbarActions">
+                        <a href="citas.html" class="btn btn-primary-cta">
                             <i class="bi bi-calendar-check me-2"></i>Solicitar Cita
                         </a>
-                        <a href="login.html" class="btn btn-outline-custom">
+                        <a href="login.html" class="btn btn-outline-custom" id="btnLogin">
                             <i class="bi bi-person-circle me-1"></i>Iniciar sesión
                         </a>
                     </div>
@@ -59,12 +67,19 @@
     </header>
 
     <main>
-        <!-- HERO -->
+
+        <!-- HERO DE PÁGINA -->
         <section class="page-hero">
             <div class="container">
-                <span class="section-eyebrow"><span class="eyebrow-dot"></span> Blog Médico</span>
+                <span class="section-eyebrow">
+                    <span class="eyebrow-dot"></span>
+                    Blog Médico
+                </span>
                 <h1 class="page-title">Publicaciones y Noticias</h1>
-                <p class="page-subtitle">Consejos, novedades y educación médica para pacientes y colegas.</p>
+                <p class="page-subtitle">
+                    Consejos, novedades y educación médica para pacientes y colegas.
+                    Explora nuestro contenido sobre ortopedia, traumatología y ortopedia infantil.
+                </p>
             </div>
         </section>
 
@@ -100,11 +115,9 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
 
-                        <!-- ============================================
-                             POST 1: CARRUSEL MIXTO (Fotos + Video)
-                             Ejemplo: Explicación del método Ponseti
-                        ============================================= -->
+                        <!-- POST 1: CARRUSEL MIXTO -->
                         <article class="post-card reveal-up" data-category="ortopedia-infantil">
+                            <a href="publicacion.html?id=1" class="post-link-overlay"></a>
                             <div class="post-header">
                                 <div class="post-author-info">
                                     <div class="author-avatar">JM</div>
@@ -116,102 +129,58 @@
                                         </span>
                                     </div>
                                 </div>
-                                <button class="post-menu-btn"><i class="bi bi-three-dots"></i></button>
+                                <button class="post-menu-btn" onclick="event.preventDefault(); event.stopPropagation();">
+                                    <i class="bi bi-three-dots"></i>
+                                </button>
                             </div>
                             
                             <div class="post-content">
                                 <h3 class="post-title">El Método Ponseti: Tratamiento del pie equinovaro en niños</h3>
-                                <p>El pie equinovaro es una condición congénita que afecta a 1 de cada 1000 recién nacidos. El Método Ponseti es el estándar de oro mundial para su tratamiento, con tasas de éxito superiores al 95% cuando se inicia temprano.</p>
-                                <p>En este post les comparto el proceso completo paso a paso.</p>
+                                <p>El pie equinovaro es una condición congénita que afecta a 1 de cada 1000 recién nacidos. El Método Ponseti es el estándar de oro mundial para su tratamiento, con tasas de éxito superiores al 95% cuando se inicia temprano. En este post les comparto el proceso completo paso a paso.</p>
                             </div>
 
-                            <!-- CARRUSEL MIXTO: 3 fotos + 1 video -->
-                            <div class="post-media">
-                                <div class="swiper media-swiper">
-                                    <div class="swiper-wrapper">
-                                        <!-- Slide 1: Foto -->
-                                        <div class="swiper-slide">
-                                            <div class="media-slide image-slide" data-type="image" data-src="assets/img/ortopedia-infantil.jpg">
-                                                <img src="assets/img/ortopedia-infantil.jpg" alt="Consulta de ortopedia infantil">
-                                                <div class="slide-overlay">
-                                                    <i class="bi bi-zoom-in"></i>
-                                                </div>
-                                                <span class="slide-counter">1 / 4</span>
-                                            </div>
-                                        </div>
-                                        <!-- Slide 2: Foto -->
-                                        <div class="swiper-slide">
-                                            <div class="media-slide image-slide" data-type="image" data-src="assets/img/doctor.jpg">
-                                                <img src="assets/img/doctor.jpg" alt="Doctor en consulta">
-                                                <div class="slide-overlay">
-                                                    <i class="bi bi-zoom-in"></i>
-                                                </div>
-                                                <span class="slide-counter">2 / 4</span>
-                                            </div>
-                                        </div>
-                                        <!-- Slide 3: Video de YouTube -->
-                                        <div class="swiper-slide">
-                                            <div class="media-slide video-slide" data-type="youtube" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ">
-                                                <div class="video-container">
-                                                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-                                                </div>
-                                                <div class="video-badge">
-                                                    <i class="bi bi-play-circle-fill"></i> Video explicativo
-                                                </div>
-                                                <span class="slide-counter">3 / 4</span>
-                                            </div>
-                                        </div>
-                                        <!-- Slide 4: Foto -->
-                                        <div class="swiper-slide">
-                                            <div class="media-slide image-slide" data-type="image" data-src="assets/img/ortopedia.jpg">
-                                                <img src="assets/img/ortopedia.jpg" alt="Entorno hospitalario">
-                                                <div class="slide-overlay">
-                                                    <i class="bi bi-zoom-in"></i>
-                                                </div>
-                                                <span class="slide-counter">4 / 4</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Controles del carrusel -->
-                                    <div class="swiper-button-prev custom-swiper-btn">
-                                        <i class="bi bi-chevron-left"></i>
-                                    </div>
-                                    <div class="swiper-button-next custom-swiper-btn">
-                                        <i class="bi bi-chevron-right"></i>
-                                    </div>
-                                    <div class="swiper-pagination custom-swiper-pagination"></div>
-                                </div>
+                            <!-- Imagen destacada -->
+                            <div class="post-media single-media">
+                                <img src="assets/img/ortopedia-infantil.jpg" alt="Ortopedia infantil" class="post-image">
                             </div>
 
-                            <!-- ACCIONES -->
                             <div class="post-actions">
-                                <button class="action-btn like-btn" onclick="toggleLike(this)">
-                                    <i class="bi bi-heart"></i> <span class="like-count">24</span> Me gusta
+                                <button class="action-btn like-btn" onclick="event.stopPropagation(); toggleLike(this)">
+                                    <i class="bi bi-heart"></i> <span class="like-count">124</span> Me gusta
                                 </button>
-                                <button class="action-btn comment-btn" onclick="toggleComments(this)">
-                                    <i class="bi bi-chat"></i> Comentar
+                                <button class="action-btn comment-btn" onclick="event.stopPropagation(); toggleComments(this)">
+                                    <i class="bi bi-chat"></i> 2 Comentarios
                                 </button>
-                                <button class="action-btn share-btn">
+                                <button class="action-btn share-btn" onclick="event.stopPropagation(); compartirPost('El Método Ponseti: Tratamiento del pie equinovaro en niños')">
                                     <i class="bi bi-share"></i> Compartir
                                 </button>
                             </div>
 
                             <!-- COMENTARIOS -->
-                            <div class="comments-section" style="display: none;">
+                            <div class="comments-section" style="display: none;" onclick="event.stopPropagation();">
                                 <div class="comments-list">
                                     <div class="comment-item">
-                                        <div class="comment-avatar">U</div>
+                                        <div class="comment-avatar">MG</div>
                                         <div class="comment-body">
                                             <div class="comment-meta">
-                                                <strong>Usuario Demo</strong>
-                                                <span class="comment-time">Hace 1 hora</span>
+                                                <strong>María González</strong>
+                                                <span class="comment-time">Hace 2 días</span>
                                             </div>
-                                            <p class="comment-text">Excelente información doctor, muy clara.</p>
+                                            <p class="comment-text">Excelente información doctor. Mi bebé fue diagnosticado con pie equinovaro y estamos comenzando el tratamiento. ¿A qué edad es ideal iniciar?</p>
+                                        </div>
+                                    </div>
+                                    <div class="comment-item">
+                                        <div class="comment-avatar">CR</div>
+                                        <div class="comment-body">
+                                            <div class="comment-meta">
+                                                <strong>Carlos Ramírez</strong>
+                                                <span class="comment-time">Hace 5 días</span>
+                                            </div>
+                                            <p class="comment-text">¿Cuánto tiempo dura aproximadamente todo el tratamiento?</p>
                                         </div>
                                     </div>
                                 </div>
-                                <form class="comment-form" onsubmit="handleComment(event, this)">
+                                <form class="comment-form" onsubmit="event.stopPropagation(); handleComment(event, this)">
                                     <div class="input-group">
                                         <input type="text" class="form-control comment-input" placeholder="Escribe un comentario respetuoso..." required>
                                         <button type="submit" class="btn btn-primary-cta">
@@ -223,11 +192,9 @@
                             </div>
                         </article>
 
-                        <!-- ============================================
-                             POST 2: VIDEO ÚNICO DE YOUTUBE
-                             Con etiqueta de video generado con IA
-                        ============================================= -->
+                        <!-- POST 2: VIDEO -->
                         <article class="post-card reveal-up" data-category="video">
+                            <a href="publicacion.html?id=2" class="post-link-overlay"></a>
                             <div class="post-header">
                                 <div class="post-author-info">
                                     <div class="author-avatar">JM</div>
@@ -243,34 +210,31 @@
                             
                             <div class="post-content">
                                 <h3 class="post-title">¿Cómo se forma un callo óseo después de una fractura?</h3>
-                                <p>El proceso de consolidación ósea es fascinante. En este video les explico las fases biológicas que ocurren desde el momento de la fractura hasta la recuperación completa.</p>
+                                <p>El proceso de consolidación ósea es fascinante. En este video les explico las fases biológicas que ocurren desde el momento de la fractura hasta la recuperación completa. Conoce cómo tu cuerpo trabaja para sanar.</p>
                             </div>
 
-                            <!-- VIDEO ÚNICO con etiqueta IA -->
+                            <!-- VIDEO -->
                             <div class="post-media single-media">
-                                <div class="video-container ai-video">
+                                <div class="video-container">
                                     <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-                                    <div class="ai-badge">
-                                        <i class="bi bi-robot"></i> Video de referencia generado con IA
-                                    </div>
                                 </div>
                             </div>
 
                             <div class="post-actions">
-                                <button class="action-btn like-btn" onclick="toggleLike(this)">
-                                    <i class="bi bi-heart"></i> <span class="like-count">18</span> Me gusta
+                                <button class="action-btn like-btn" onclick="event.stopPropagation(); toggleLike(this)">
+                                    <i class="bi bi-heart"></i> <span class="like-count">89</span> Me gusta
                                 </button>
-                                <button class="action-btn comment-btn" onclick="toggleComments(this)">
-                                    <i class="bi bi-chat"></i> Comentar
+                                <button class="action-btn comment-btn" onclick="event.stopPropagation(); toggleComments(this)">
+                                    <i class="bi bi-chat"></i> 5 Comentarios
                                 </button>
-                                <button class="action-btn share-btn">
+                                <button class="action-btn share-btn" onclick="event.stopPropagation(); compartirPost('¿Cómo se forma un callo óseo después de una fractura?')">
                                     <i class="bi bi-share"></i> Compartir
                                 </button>
                             </div>
 
-                            <div class="comments-section" style="display: none;">
+                            <div class="comments-section" style="display: none;" onclick="event.stopPropagation();">
                                 <div class="comments-list"></div>
-                                <form class="comment-form" onsubmit="handleComment(event, this)">
+                                <form class="comment-form" onsubmit="event.stopPropagation(); handleComment(event, this)">
                                     <div class="input-group">
                                         <input type="text" class="form-control comment-input" placeholder="Escribe un comentario respetuoso..." required>
                                         <button type="submit" class="btn btn-primary-cta">
@@ -282,11 +246,9 @@
                             </div>
                         </article>
 
-                        <!-- ============================================
-                             POST 3: CARRUSEL DE FOTOS (solo imágenes)
-                             Con advertencia de contenido sensible
-                        ============================================= -->
-                        <article class="post-card reveal-up" data-category="traumatologia">
+                        <!-- POST 3: SOLO TEXTO -->
+                        <article class="post-card reveal-up" data-category="prevencion">
+                            <a href="publicacion.html?id=3" class="post-link-overlay"></a>
                             <div class="post-header">
                                 <div class="post-author-info">
                                     <div class="author-avatar">JM</div>
@@ -294,160 +256,6 @@
                                         <h4 class="author-name">Dr. José Ignacio Martínez</h4>
                                         <span class="post-date">
                                             <i class="bi bi-clock"></i> Hace 1 semana · 
-                                            <span class="post-category-badge">Traumatología</span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="post-content">
-                                <h3 class="post-title">Caso clínico: Fractura de fémur en paciente pediátrico</h3>
-                                <p>Les presento un caso clínico de fractura de fémur en un niño de 8 años. El tratamiento se realizó con clavo endomedular lateral no fresado, con excelente evolución.</p>
-                            </div>
-
-                            <!-- ADVERTENCIA DE CONTENIDO SENSIBLE -->
-                            <div class="content-warning">
-                                <i class="bi bi-exclamation-triangle-fill"></i>
-                                <div>
-                                    <strong>Contenido sensible</strong>
-                                    <p>Esta publicación contiene imágenes médicas que pueden ser sensibles para algunas personas.</p>
-                                    <button class="btn-show-content" onclick="showSensitiveContent(this)">
-                                        Ver contenido
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- CARRUSEL DE FOTOS (oculto hasta aceptar) -->
-                            <div class="post-media sensitive-content" style="display: none;">
-                                <div class="swiper media-swiper">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="media-slide image-slide" data-type="image" data-src="assets/img/doctor.jpg">
-                                                <img src="assets/img/doctor.jpg" alt="Radiografía pre-operatoria">
-                                                <div class="slide-overlay"><i class="bi bi-zoom-in"></i></div>
-                                                <span class="slide-counter">1 / 3</span>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="media-slide image-slide" data-type="image" data-src="assets/img/doctor-2.jpg">
-                                                <img src="assets/img/doctor-2.jpg" alt="Procedimiento">
-                                                <div class="slide-overlay"><i class="bi bi-zoom-in"></i></div>
-                                                <span class="slide-counter">2 / 3</span>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="media-slide image-slide" data-type="image" data-src="assets/img/ortopedia.jpg">
-                                                <img src="assets/img/ortopedia.jpg" alt="Resultado post-operatorio">
-                                                <div class="slide-overlay"><i class="bi bi-zoom-in"></i></div>
-                                                <span class="slide-counter">3 / 3</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-button-prev custom-swiper-btn"><i class="bi bi-chevron-left"></i></div>
-                                    <div class="swiper-button-next custom-swiper-btn"><i class="bi bi-chevron-right"></i></div>
-                                    <div class="swiper-pagination custom-swiper-pagination"></div>
-                                </div>
-                            </div>
-
-                            <div class="post-actions">
-                                <button class="action-btn like-btn" onclick="toggleLike(this)">
-                                    <i class="bi bi-heart"></i> <span class="like-count">32</span> Me gusta
-                                </button>
-                                <button class="action-btn comment-btn" onclick="toggleComments(this)">
-                                    <i class="bi bi-chat"></i> Comentar
-                                </button>
-                                <button class="action-btn share-btn">
-                                    <i class="bi bi-share"></i> Compartir
-                                </button>
-                            </div>
-
-                            <div class="comments-section" style="display: none;">
-                                <div class="comments-list"></div>
-                                <form class="comment-form" onsubmit="handleComment(event, this)">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control comment-input" placeholder="Escribe un comentario respetuoso..." required>
-                                        <button type="submit" class="btn btn-primary-cta">
-                                            <i class="bi bi-send"></i>
-                                        </button>
-                                    </div>
-                                    <small class="text-muted mt-1 d-block">* Tu comentario pasará por nuestro filtro de respeto.</small>
-                                </form>
-                            </div>
-                        </article>
-
-                        <!-- ============================================
-                             POST 4: VIDEO LOCAL (.mp4) + DISCLAIMER MÉDICO
-                        ============================================= -->
-                        <article class="post-card reveal-up" data-category="educacion">
-                            <div class="post-header">
-                                <div class="post-author-info">
-                                    <div class="author-avatar">JM</div>
-                                    <div>
-                                        <h4 class="author-name">Dr. José Ignacio Martínez</h4>
-                                        <span class="post-date">
-                                            <i class="bi bi-clock"></i> Hace 2 semanas · 
-                                            <span class="post-category-badge">Educación</span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="post-content">
-                                <h3 class="post-title">Rehabilitación post-operatoria: Ejercicios recomendados</h3>
-                                <p>La rehabilitación es fundamental después de cualquier procedimiento ortopédico. Aquí les muestro algunos ejercicios básicos que pueden realizar en casa bajo supervisión médica.</p>
-                            </div>
-
-                            <!-- VIDEO LOCAL + DISCLAIMER -->
-                            <div class="post-media single-media">
-                                <div class="video-container">
-                                    <video controls poster="assets/img/ortopedia.jpg">
-                                        <source src="assets/videos/rehabilitacion.mp4" type="video/mp4">
-                                        Tu navegador no soporta el elemento de video.
-                                    </video>
-                                </div>
-                                <div class="medical-disclaimer">
-                                    <i class="bi bi-info-circle-fill"></i>
-                                    <strong>Disclaimer médico:</strong> Este video es solo educativo. Consulte siempre con su médico antes de realizar cualquier ejercicio.
-                                </div>
-                            </div>
-
-                            <div class="post-actions">
-                                <button class="action-btn like-btn" onclick="toggleLike(this)">
-                                    <i class="bi bi-heart"></i> <span class="like-count">45</span> Me gusta
-                                </button>
-                                <button class="action-btn comment-btn" onclick="toggleComments(this)">
-                                    <i class="bi bi-chat"></i> Comentar
-                                </button>
-                                <button class="action-btn share-btn">
-                                    <i class="bi bi-share"></i> Compartir
-                                </button>
-                            </div>
-
-                            <div class="comments-section" style="display: none;">
-                                <div class="comments-list"></div>
-                                <form class="comment-form" onsubmit="handleComment(event, this)">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control comment-input" placeholder="Escribe un comentario respetuoso..." required>
-                                        <button type="submit" class="btn btn-primary-cta">
-                                            <i class="bi bi-send"></i>
-                                        </button>
-                                    </div>
-                                    <small class="text-muted mt-1 d-block">* Tu comentario pasará por nuestro filtro de respeto.</small>
-                                </form>
-                            </div>
-                        </article>
-
-                        <!-- ============================================
-                             POST 5: SOLO TEXTO (publicación simple)
-                        ============================================= -->
-                        <article class="post-card reveal-up" data-category="prevencion">
-                            <div class="post-header">
-                                <div class="post-author-info">
-                                    <div class="author-avatar">JM</div>
-                                    <div>
-                                        <h4 class="author-name">Dr. José Ignacio Martínez</h4>
-                                        <span class="post-date">
-                                            <i class="bi bi-clock"></i> Hace 3 semanas · 
                                             <span class="post-category-badge">Prevención</span>
                                         </span>
                                     </div>
@@ -456,32 +264,131 @@
                             
                             <div class="post-content">
                                 <h3 class="post-title">5 consejos para prevenir fracturas en niños durante las vacaciones</h3>
-                                <p>Las vacaciones son época de juego y actividad física. Aquí les dejo algunas recomendaciones clave:</p>
+                                <p>Las vacaciones son época de juego y actividad física. Aquí les dejo algunas recomendaciones clave para evitar accidentes en el hogar y al aire libre. La prevención es la mejor medicina.</p>
                                 <ol class="tips-list">
                                     <li><strong>Usar equipo de protección:</strong> Cascos, rodilleras y coderas al andar en bicicleta o patines.</li>
                                     <li><strong>Supervisión adulta:</strong> Siempre debe haber un adulto presente en actividades de riesgo.</li>
                                     <li><strong>Evitar superficies peligrosas:</strong> Piscinas sin supervisión, techos, árboles altos.</li>
-                                    <li><strong>Hidratación adecuada:</strong> La deshidratación aumenta el riesgo de accidentes.</li>
-                                    <li><strong>Conocer los límites:</strong> Enseñar a los niños a reconocer sus capacidades.</li>
                                 </ol>
-                                <p>Recuerden que la prevención es la mejor medicina. ¡Felices vacaciones seguras!</p>
                             </div>
 
                             <div class="post-actions">
-                                <button class="action-btn like-btn" onclick="toggleLike(this)">
+                                <button class="action-btn like-btn" onclick="event.stopPropagation(); toggleLike(this)">
                                     <i class="bi bi-heart"></i> <span class="like-count">67</span> Me gusta
                                 </button>
-                                <button class="action-btn comment-btn" onclick="toggleComments(this)">
-                                    <i class="bi bi-chat"></i> Comentar
+                                <button class="action-btn comment-btn" onclick="event.stopPropagation(); toggleComments(this)">
+                                    <i class="bi bi-chat"></i> 8 Comentarios
                                 </button>
-                                <button class="action-btn share-btn">
+                                <button class="action-btn share-btn" onclick="event.stopPropagation(); compartirPost('5 consejos para prevenir fracturas en niños durante las vacaciones')">
                                     <i class="bi bi-share"></i> Compartir
                                 </button>
                             </div>
 
-                            <div class="comments-section" style="display: none;">
+                            <div class="comments-section" style="display: none;" onclick="event.stopPropagation();">
                                 <div class="comments-list"></div>
-                                <form class="comment-form" onsubmit="handleComment(event, this)">
+                                <form class="comment-form" onsubmit="event.stopPropagation(); handleComment(event, this)">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control comment-input" placeholder="Escribe un comentario respetuoso..." required>
+                                        <button type="submit" class="btn btn-primary-cta">
+                                            <i class="bi bi-send"></i>
+                                        </button>
+                                    </div>
+                                    <small class="text-muted mt-1 d-block">* Tu comentario pasará por nuestro filtro de respeto.</small>
+                                </form>
+                            </div>
+                        </article>
+
+                        <!-- POST 4: CON IMAGEN -->
+                        <article class="post-card reveal-up" data-category="traumatologia">
+                            <a href="publicacion.html?id=4" class="post-link-overlay"></a>
+                            <div class="post-header">
+                                <div class="post-author-info">
+                                    <div class="author-avatar">JM</div>
+                                    <div>
+                                        <h4 class="author-name">Dr. José Ignacio Martínez</h4>
+                                        <span class="post-date">
+                                            <i class="bi bi-clock"></i> Hace 2 semanas · 
+                                            <span class="post-category-badge">Traumatología</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="post-content">
+                                <h3 class="post-title">Caso clínico: Fractura de fémur en paciente pediátrico</h3>
+                                <p>Les presento un caso clínico de fractura de fémur en un niño de 8 años. El tratamiento se realizó con clavo endomedular lateral no fresado, con excelente evolución. El paciente pudo retomar sus actividades normales en 3 meses.</p>
+                            </div>
+
+                            <div class="post-media single-media">
+                                <img src="assets/img/doctor.jpg" alt="Caso clínico" class="post-image">
+                            </div>
+
+                            <div class="post-actions">
+                                <button class="action-btn like-btn" onclick="event.stopPropagation(); toggleLike(this)">
+                                    <i class="bi bi-heart"></i> <span class="like-count">45</span> Me gusta
+                                </button>
+                                <button class="action-btn comment-btn" onclick="event.stopPropagation(); toggleComments(this)">
+                                    <i class="bi bi-chat"></i> 3 Comentarios
+                                </button>
+                                <button class="action-btn share-btn" onclick="event.stopPropagation(); compartirPost('Caso clínico: Fractura de fémur en paciente pediátrico')">
+                                    <i class="bi bi-share"></i> Compartir
+                                </button>
+                            </div>
+
+                            <div class="comments-section" style="display: none;" onclick="event.stopPropagation();">
+                                <div class="comments-list"></div>
+                                <form class="comment-form" onsubmit="event.stopPropagation(); handleComment(event, this)">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control comment-input" placeholder="Escribe un comentario respetuoso..." required>
+                                        <button type="submit" class="btn btn-primary-cta">
+                                            <i class="bi bi-send"></i>
+                                        </button>
+                                    </div>
+                                    <small class="text-muted mt-1 d-block">* Tu comentario pasará por nuestro filtro de respeto.</small>
+                                </form>
+                            </div>
+                        </article>
+
+                        <!-- POST 5: EDUCACIÓN -->
+                        <article class="post-card reveal-up" data-category="educacion">
+                            <a href="publicacion.html?id=5" class="post-link-overlay"></a>
+                            <div class="post-header">
+                                <div class="post-author-info">
+                                    <div class="author-avatar">JM</div>
+                                    <div>
+                                        <h4 class="author-name">Dr. José Ignacio Martínez</h4>
+                                        <span class="post-date">
+                                            <i class="bi bi-clock"></i> Hace 3 semanas · 
+                                            <span class="post-category-badge">Educación</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="post-content">
+                                <h3 class="post-title">Rehabilitación post-operatoria: Ejercicios recomendados</h3>
+                                <p>La rehabilitación es fundamental después de cualquier procedimiento ortopédico. Aquí les muestro algunos ejercicios básicos que pueden realizar en casa bajo supervisión médica. Recuerden siempre consultar con su médico antes de iniciar cualquier rutina.</p>
+                            </div>
+
+                            <div class="post-media single-media">
+                                <img src="assets/img/ortopedia.jpg" alt="Rehabilitación" class="post-image">
+                            </div>
+
+                            <div class="post-actions">
+                                <button class="action-btn like-btn" onclick="event.stopPropagation(); toggleLike(this)">
+                                    <i class="bi bi-heart"></i> <span class="like-count">52</span> Me gusta
+                                </button>
+                                <button class="action-btn comment-btn" onclick="event.stopPropagation(); toggleComments(this)">
+                                    <i class="bi bi-chat"></i> 6 Comentarios
+                                </button>
+                                <button class="action-btn share-btn" onclick="event.stopPropagation(); compartirPost('Rehabilitación post-operatoria: Ejercicios recomendados')">
+                                    <i class="bi bi-share"></i> Compartir
+                                </button>
+                            </div>
+
+                            <div class="comments-section" style="display: none;" onclick="event.stopPropagation();">
+                                <div class="comments-list"></div>
+                                <form class="comment-form" onsubmit="event.stopPropagation(); handleComment(event, this)">
                                     <div class="input-group">
                                         <input type="text" class="form-control comment-input" placeholder="Escribe un comentario respetuoso..." required>
                                         <button type="submit" class="btn btn-primary-cta">
@@ -497,11 +404,10 @@
                 </div>
             </div>
         </section>
+
     </main>
 
-    <!-- ============================================
-         FOOTER
-    ============================================= -->
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container">
             <div class="row g-4">
@@ -518,34 +424,36 @@
                 <div class="col-6 col-lg-2">
                     <h4>Navegación</h4>
                     <ul class="footer-links">
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#especialidades">Especialidades</a></li>
-                        <li><a href="#formacion">Formación</a></li>
-                        <li><a href="#trayectoria">Trayectoria</a></li>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#especialidades">Especialidades</a></li>
+                        <li><a href="index.html#formacion">Formación</a></li>
+                        <li><a href="index.html#trayectoria">Trayectoria</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-lg-2">
                     <h4>Secciones</h4>
                     <ul class="footer-links">
                         <li><a href="publicaciones.html">Publicaciones</a></li>
-                        <li><a href="#galeria">Galería</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="citas.html">Agendar Cita</a></li>
+                        <li><a href="index.html#galeria">Galería</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="terminos.html">Términos y Condiciones</a></li>
+                        <li><a href="privacidad.html">Política de Privacidad</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">
                     <h4>Contacto</h4>
                     <ul class="footer-contact">
-                        <li><i class="bi bi-geo-alt-fill"></i> Barranquilla · Montería · Garzón</li>
+                        <li><i class="bi bi-geo-alt-fill"></i> Barranquilla · Montería · Garzón · Santa Marta</li>
                         <li><i class="bi bi-envelope-fill"></i> joseimartinezs1977@hotmail.com</li>
+                        <li><i class="bi bi-telephone-fill"></i> 323 324 0233</li>
                     </ul>
                 </div>
-                <div class="col-6 col-lg-2">
-    <h4>Legal</h4>
-    <ul class="footer-links">
-        <li><a href="terminos.html">Términos y Condiciones</a></li>
-        <li><a href="privacidad.html">Política de Privacidad</a></li>
-    </ul>
-</div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Dr. José Ignacio Martínez Suárez. Todos los derechos reservados.</p>
@@ -564,16 +472,7 @@
         <i class="bi bi-arrow-up"></i>
     </button>
 
-    <!-- LIGHTBOX PARA IMÁGENES -->
-    <div class="lightbox-modal" id="lightboxModal">
-        <button class="lightbox-close" onclick="closeLightbox()">
-            <i class="bi bi-x-lg"></i>
-        </button>
-        <img src="" alt="" id="lightboxImage" class="lightbox-img">
-        <div class="lightbox-caption" id="lightboxCaption"></div>
-    </div>
-
-    <!-- TOAST ALERTS -->
+    <!-- TOAST NOTIFICATIONS -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="alertToast" class="toast align-items-center text-bg-danger border-0" role="alert">
             <div class="d-flex">
@@ -587,7 +486,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/publicaciones.js"></script>
 </body>

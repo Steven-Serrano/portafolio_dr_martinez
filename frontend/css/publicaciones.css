@@ -706,3 +706,79 @@
         flex-wrap: wrap;
     }
 }
+
+/* =========================================================
+   POST LINK OVERLAY - Hace toda la card clickeable
+   ========================================================= */
+.post-link-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    text-decoration: none;
+}
+
+.post-card {
+    position: relative;
+    cursor: pointer;
+}
+
+.post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(11, 57, 84, 0.12);
+}
+
+/* Asegurar que los botones estén por encima del overlay */
+.post-actions,
+.post-menu-btn,
+.comments-section {
+    position: relative;
+    z-index: 2;
+}
+
+.post-menu-btn {
+    position: relative;
+    z-index: 3;
+}
+
+/* Tips list */
+.tips-list {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+.tips-list li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+/* Video container en posts */
+.post-media .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    margin-top: 1rem;
+}
+
+.post-media .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Imagen en posts */
+.post-image {
+    width: 100%;
+    border-radius: var(--radius-md);
+    margin-top: 1rem;
+    max-height: 400px;
+    object-fit: cover;
+}
+

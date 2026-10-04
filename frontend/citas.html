@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Cita | Dr. José Ignacio Martínez Suárez</title>
+    <meta name="description" content="Agenda tu cita de ortopedia y traumatología.">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230B3954'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EJM%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/citas.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <span class="brand-mark">JM</span>
+                    <span class="brand-text">
+                        <strong>Dr. José Ignacio</strong>
+                        <small>Martínez Suárez</small>
+                    </span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#especialidades">Especialidades</a></li>
+                        <li class="nav-item"><a class="nav-link" href="publicaciones.html">Publicaciones</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="citas.html">Agendar Cita</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                    <div class="navbar-actions">
+                        <a href="login.html" class="btn btn-outline-custom">
+                            <i class="bi bi-person-circle me-1"></i>Iniciar sesión
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="citas-main">
+        
+        <!-- HERO -->
+        <section class="citas-hero">
+            <div class="container">
+                <div class="citas-hero-content">
+                    <i class="bi bi-calendar-check-fill"></i>
+                    <h1>Agenda tu Cita Médica</h1>
+                    <p>Reserva tu consulta de forma rápida y segura. Te confirmaremos tu cita en menos de 24 horas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTENIDO: FORMULARIO + UBICACIONES -->
+        <section class="citas-content">
+            <div class="container">
+                <div class="row g-5">
+                    
+                    <!-- Columna Izquierda: Formulario por Pasos -->
+                    <div class="col-lg-7">
+                        <div class="citas-card">
+                            
+                            <!-- Indicador de Pasos -->
+                            <div class="steps-indicator">
+                                <div class="step-item active" data-step="1">
+                                    <div class="step-number">1</div>
+                                    <span class="step-label">Especialidad</span>
+                                </div>
+                                <div class="step-line"></div>
+                                <div class="step-item" data-step="2">
+                                    <div class="step-number">2</div>
+                                    <span class="step-label">Fecha y Hora</span>
+                                </div>
+                                <div class="step-line"></div>
+                                <div class="step-item" data-step="3">
+                                    <div class="step-number">3</div>
+                                    <span class="step-label">Tus Datos</span>
+                                </div>
+                            </div>
+
+                            <!-- PASO 1: Especialidad -->
+                            <div class="step-content active" id="step-1">
+                                <h3><i class="bi bi-stethoscope"></i> ¿Qué tipo de consulta necesitas?</h3>
+                                <div class="options-grid">
+                                    <label class="option-card">
+                                        <input type="radio" name="especialidad" value="ortopedia-infantil">
+                                        <div class="option-content">
+                                            <i class="bi bi-people-fill"></i>
+                                            <strong>Ortopedia Infantil</strong>
+                                            <small>Niños y adolescentes</small>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="especialidad" value="traumatologia">
+                                        <div class="option-content">
+                                            <i class="bi bi-bandaid-fill"></i>
+                                            <strong>Traumatología</strong>
+                                            <small>Fracturas y lesiones</small>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="especialidad" value="primera-vez">
+                                        <div class="option-content">
+                                            <i class="bi bi-person-plus-fill"></i>
+                                            <strong>Primera Vez</strong>
+                                            <small>Evaluación inicial</small>
+                                        </div>
+                                    </label>
+                                    <label class="option-card">
+                                        <input type="radio" name="especialidad" value="control">
+                                        <div class="option-content">
+                                            <i class="bi bi-arrow-repeat"></i>
+                                            <strong>Control</strong>
+                                            <small>Seguimiento</small>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="step-actions">
+                                    <button class="btn-next" onclick="nextStep(2)">Continuar <i class="bi bi-arrow-right"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- PASO 2: Fecha y Hora -->
+                            <div class="step-content" id="step-2">
+                                <h3><i class="bi bi-calendar-event"></i> Selecciona fecha y hora</h3>
+                                <div class="form-group">
+                                    <label class="form-label">Fecha de la cita</label>
+                                    <input type="date" class="form-control" id="citaFecha">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Horario disponible</label>
+                                    <div class="time-slots">
+                                        <button type="button" class="time-slot">08:00 AM</button>
+                                        <button type="button" class="time-slot">09:30 AM</button>
+                                        <button type="button" class="time-slot">11:00 AM</button>
+                                        <button type="button" class="time-slot">02:00 PM</button>
+                                        <button type="button" class="time-slot">04:30 PM</button>
+                                    </div>
+                                </div>
+                                <div class="step-actions">
+                                    <button class="btn-prev" onclick="prevStep(1)"><i class="bi bi-arrow-left"></i> Atrás</button>
+                                    <button class="btn-next" onclick="nextStep(3)">Continuar <i class="bi bi-arrow-right"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- PASO 3: Datos del Paciente -->
+                            <div class="step-content" id="step-3">
+                                <h3><i class="bi bi-person-vcard"></i> Datos del paciente</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label">Nombre completo *</label>
+                                        <input type="text" class="form-control" id="pacienteNombre" placeholder="Juan Pérez">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Teléfono *</label>
+                                        <input type="tel" class="form-control" id="pacienteTel" placeholder="300 123 4567">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Correo electrónico *</label>
+                                    <input type="email" class="form-control" id="pacienteEmail" placeholder="juan@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Motivo de la consulta (opcional)</label>
+                                    <textarea class="form-control" id="pacienteMotivo" rows="3" placeholder="Describe brevemente tu situación..."></textarea>
+                                </div>
+                                <div class="step-actions">
+                                    <button class="btn-prev" onclick="prevStep(2)"><i class="bi bi-arrow-left"></i> Atrás</button>
+                                    <button class="btn-submit" onclick="enviarCita()">
+                                        <i class="bi bi-check-circle"></i> Confirmar Cita
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Mensaje de Éxito (Oculto) -->
+                            <div class="step-content" id="step-success" style="display: none; text-align: center; padding: 3rem 1rem;">
+                                <div class="success-icon">
+                                    <i class="bi bi-check-circle-fill"></i>
+                                </div>
+                                <h3>¡Solicitud enviada!</h3>
+                                <p>Hemos recibido tu solicitud de cita. Nuestro equipo te contactará al <strong id="confirmTel"></strong> en menos de 24 horas para confirmar.</p>
+                                <button class="btn-next" onclick="location.href='index.html'">Volver al inicio</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Ubicaciones -->
+                    <div class="col-lg-5">
+                        <div class="ubicaciones-card">
+                            <h3><i class="bi bi-geo-alt-fill"></i> Nuestros Consultorios</h3>
+                            <p class="ubicaciones-intro">Atendemos en las siguientes ciudades. Selecciona la más cercana a ti.</p>
+
+                            <div class="ubicacion-item">
+                                <div class="ubicacion-icon">
+                                    <i class="bi bi-building"></i>
+                                </div>
+                                <div class="ubicacion-info">
+                                    <h4>Barranquilla</h4>
+                                    <p><i class="bi bi-geo-alt"></i> Calle 34 # 11-14</p>
+                                    <p><i class="bi bi-clock"></i> Lun - Vie: 8:00 AM - 6:00 PM</p>
+                                    <span class="badge-ubicacion">Sede Principal</span>
+                                </div>
+                            </div>
+
+                            <div class="ubicacion-item">
+                                <div class="ubicacion-icon">
+                                    <i class="bi bi-building"></i>
+                                </div>
+                                <div class="ubicacion-info">
+                                    <h4>Montería</h4>
+                                    <p><i class="bi bi-geo-alt"></i> Fundación Clínica del Río</p>
+                                    <p><i class="bi bi-clock"></i> Mar y Jue: 9:00 AM - 5:00 PM</p>
+                                </div>
+                            </div>
+
+                            <div class="ubicacion-item">
+                                <div class="ubicacion-icon">
+                                    <i class="bi bi-building"></i>
+                                </div>
+                                <div class="ubicacion-info">
+                                    <h4>Garzón (Huila)</h4>
+                                    <p><i class="bi bi-geo-alt"></i> E.S.E. Hospital San Vicente de Paul</p>
+                                    <p><i class="bi bi-clock"></i> Lun - Mié: 8:00 AM - 4:00 PM</p>
+                                </div>
+                            </div>
+                            <div class="ubicacion-item">
+    <div class="ubicacion-icon">
+        <i class="bi bi-building"></i>
+    </div>
+    <div class="ubicacion-info">
+        <h4>Santa Marta</h4>
+        <p><i class="bi bi-geo-alt"></i> [Dirección o Nombre de la Clínica]</p>
+        <p><i class="bi bi-clock"></i> [Días y Horarios de atención]</p>
+    </div>
+</div>
+
+                            <div class="ubicaciones-contacto">
+                                <h4>¿Necesitas ayuda para agendar?</h4>
+                                <a href="#" class="btn-whatsapp-ubicacion">
+                                    <i class="bi bi-whatsapp"></i> Escríbenos al 323 324 0233
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <span class="brand-mark">JM</span>
+                        <div>
+                            <strong>Dr. José Ignacio Martínez Suárez</strong>
+                            <small>Ortopedia y Traumatología · Ortopedia Infantil</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h4>Navegación</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="publicaciones.html">Publicaciones</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="terminos.html">Términos</a></li>
+                        <li><a href="privacidad.html">Privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h4>Contacto</h4>
+                    <ul class="footer-contact">
+                        <li><i class="bi bi-envelope-fill"></i> joseimartinezs1977@hotmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dr. José Ignacio Martínez Suárez. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/citas.js"></script>
+</body>
+</html>
