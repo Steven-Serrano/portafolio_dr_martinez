@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrativo | Dr. José Ignacio Martínez Suárez</title>
+    <meta name="description" content="Panel de administración de la plataforma médica.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230B3954'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EJM%3C/text%3E%3C/svg%3E">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+
+    <!-- Sidebar -->
+    <aside class="admin-sidebar" id="adminSidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-brand">
+                <span class="brand-mark-sm">JM</span>
+                <div class="sidebar-brand-text">
+                    <strong>Dr. Martínez</strong>
+                    <small>Panel Admin</small>
+                </div>
+            </a>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="sidebar-link active" data-section="dashboard">
+                <i class="bi bi-speedometer2"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="sidebar-link" data-section="publicaciones">
+                <i class="bi bi-journal-text"></i>
+                <span>Publicaciones</span>
+            </a>
+            <a href="#" class="sidebar-link" data-section="crear-publicacion">
+                <i class="bi bi-plus-circle"></i>
+                <span>Crear Publicación</span>
+            </a>
+            <a href="#" class="sidebar-link" data-section="comentarios">
+                <i class="bi bi-chat-dots"></i>
+                <span>Comentarios</span>
+                <span class="badge-count" id="badgeComentarios">0</span>
+            </a>
+            <a href="#" class="sidebar-link" data-section="usuarios">
+                <i class="bi bi-people"></i>
+                <span>Usuarios</span>
+            </a>
+            <a href="#" class="sidebar-link" data-section="configuracion">
+                <i class="bi bi-gear"></i>
+                <span>Configuración</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="index.html" class="sidebar-link">
+                <i class="bi bi-box-arrow-up-right"></i>
+                <span>Ver sitio</span>
+            </a>
+            <a href="#" class="sidebar-link text-danger" id="btnLogout">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Cerrar sesión</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        
+        <!-- Header -->
+        <header class="admin-header">
+            <button class="btn-toggle-sidebar" id="btnToggleSidebar">
+                <i class="bi bi-list"></i>
+            </button>
+            
+            <div class="admin-header-title">
+                <h1 id="pageTitle">Dashboard</h1>
+                <p id="pageSubtitle">Resumen general de la plataforma</p>
+            </div>
+
+            <div class="admin-header-user">
+                <div class="user-avatar">JM</div>
+                <div class="user-info">
+                    <strong id="adminName">Dr. José Ignacio</strong>
+                    <small>Administrador</small>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Sections -->
+        <div class="admin-content">
+
+            <!-- DASHBOARD -->
+            <section class="admin-section active" id="section-dashboard">
+                
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon stat-icon-primary">
+                            <i class="bi bi-journal-text"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="statPublicaciones">0</span>
+                            <span class="stat-label">Publicaciones</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon stat-icon-success">
+                            <i class="bi bi-chat-dots"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="statComentarios">0</span>
+                            <span class="stat-label">Comentarios</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon stat-icon-warning">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="statUsuarios">0</span>
+                            <span class="stat-label">Usuarios</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon stat-icon-info">
+                            <i class="bi bi-eye"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="statVisitas">0</span>
+                            <span class="stat-label">Visitas totales</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h3>Actividad reciente</h3>
+                        <a href="#" class="btn-link">Ver todo</a>
+                    </div>
+                    <div class="activity-list" id="activityList">
+                        <div class="activity-item">
+                            <div class="activity-icon activity-icon-success">
+                                <i class="bi bi-journal-plus"></i>
+                            </div>
+                            <div class="activity-content">
+                                <strong>Nueva publicación creada</strong>
+                                <p>El Método Ponseti: Tratamiento del pie equinovaro</p>
+                                <small>Hace 2 días</small>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon activity-icon-primary">
+                                <i class="bi bi-chat-dots"></i>
+                            </div>
+                            <div class="activity-content">
+                                <strong>Nuevo comentario recibido</strong>
+                                <p>Usuario Demo comentó en "Consejos para prevenir fracturas"</p>
+                                <small>Hace 1 hora</small>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon activity-icon-warning">
+                                <i class="bi bi-person-plus"></i>
+                            </div>
+                            <div class="activity-content">
+                                <strong>Nuevo usuario registrado</strong>
+                                <p>Juan Pérez se unió a la plataforma</p>
+                                <small>Hace 3 días</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- PUBLICACIONES -->
+            <section class="admin-section" id="section-publicaciones">
+                
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h3>Todas las publicaciones</h3>
+                        <button class="btn-admin-primary" onclick="navigateToSection('crear-publicacion')">
+                            <i class="bi bi-plus-circle"></i>
+                            Nueva publicación
+                        </button>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Título</th>
+                                    <th>Categoría</th>
+                                    <th>Fecha</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="publicacionesTable">
+                                <tr>
+                                    <td>
+                                        <strong>El Método Ponseti: Tratamiento del pie equinovaro</strong>
+                                    </td>
+                                    <td><span class="badge-category">Ortopedia Infantil</span></td>
+                                    <td>Hace 2 días</td>
+                                    <td><span class="badge-status badge-published">Publicado</span></td>
+                                    <td>
+                                        <button class="btn-icon btn-edit" title="Editar">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn-icon btn-delete" title="Eliminar">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>¿Cómo se forma un callo óseo después de una fractura?</strong>
+                                    </td>
+                                    <td><span class="badge-category">Traumatología</span></td>
+                                    <td>Hace 5 días</td>
+                                    <td><span class="badge-status badge-published">Publicado</span></td>
+                                    <td>
+                                        <button class="btn-icon btn-edit" title="Editar">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn-icon btn-delete" title="Eliminar">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Caso clínico: Fractura de fémur en paciente pediátrico</strong>
+                                    </td>
+                                    <td><span class="badge-category">Traumatología</span></td>
+                                    <td>Hace 1 semana</td>
+                                    <td><span class="badge-status badge-draft">Borrador</span></td>
+                                    <td>
+                                        <button class="btn-icon btn-edit" title="Editar">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn-icon btn-delete" title="Eliminar">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- CREAR PUBLICACIÓN -->
+            <section class="admin-section" id="section-crear-publicacion">
+                
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h3>Crear nueva publicación</h3>
+                    </div>
+
+                    <form id="formPublicacion" class="admin-form">
+                        
+                        <!-- Título -->
+                        <div class="form-group">
+                            <label for="pubTitulo" class="form-label">
+                                <i class="bi bi-type"></i>
+                                Título *
+                            </label>
+                            <input type="text" id="pubTitulo" class="form-control" placeholder="Ej: El Método Ponseti: Tratamiento del pie equinovaro" required>
+                        </div>
+
+                        <!-- Categoría -->
+                        <div class="form-group">
+                            <label for="pubCategoria" class="form-label">
+                                <i class="bi bi-tag"></i>
+                                Categoría *
+                            </label>
+                            <select id="pubCategoria" class="form-control" required>
+                                <option value="">Selecciona una categoría</option>
+                                <option value="ortopedia-infantil">Ortopedia Infantil</option>
+                                <option value="traumatologia">Traumatología</option>
+                                <option value="prevencion">Prevención</option>
+                                <option value="educacion">Educación</option>
+                                <option value="video">Video</option>
+                            </select>
+                        </div>
+
+                        <!-- Contenido -->
+                        <div class="form-group">
+                            <label for="pubContenido" class="form-label">
+                                <i class="bi bi-textarea"></i>
+                                Contenido *
+                            </label>
+                            <textarea id="pubContenido" class="form-control" rows="8" placeholder="Escribe el contenido de la publicación..." required></textarea>
+                        </div>
+
+                        <!-- Multimedia -->
+                        <div class="form-group">
+                            <label class="form-label">
+                                <i class="bi bi-image"></i>
+                                Multimedia
+                            </label>
+                            
+                            <div class="media-upload-options">
+                                <button type="button" class="btn-media-option" id="btnUploadImage">
+                                    <i class="bi bi-image"></i>
+                                    <span>Subir imagen</span>
+                                </button>
+                                <button type="button" class="btn-media-option" id="btnUploadVideo">
+                                    <i class="bi bi-camera-video"></i>
+                                    <span>Subir video</span>
+                                </button>
+                                <button type="button" class="btn-media-option" id="btnYoutubeUrl">
+                                    <i class="bi bi-youtube"></i>
+                                    <span>URL de YouTube</span>
+                                </button>
+                            </div>
+
+                            <div class="media-preview" id="mediaPreview" style="display: none;">
+                                <div class="media-preview-content">
+                                    <i class="bi bi-image"></i>
+                                    <span id="mediaPreviewText">Imagen seleccionada</span>
+                                </div>
+                                <button type="button" class="btn-remove-media" id="btnRemoveMedia">
+                                    <i class="bi bi-x"></i>
+                                </button>
+                            </div>
+
+                            <input type="file" id="fileInput" style="display: none;" accept="image/*,video/*">
+                            <input type="url" id="youtubeUrl" class="form-control mt-2" placeholder="Pega la URL de YouTube aquí..." style="display: none;">
+                        </div>
+
+                        <!-- Opciones avanzadas -->
+                        <div class="form-group">
+                            <div class="form-check-custom">
+                                <input type="checkbox" id="pubSensitive" class="form-check-input-custom">
+                                <label for="pubSensitive" class="form-check-label-custom">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                    Contenido sensible (requiere advertencia)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-check-custom">
+                                <input type="checkbox" id="pubAI" class="form-check-input-custom">
+                                <label for="pubAI" class="form-check-label-custom">
+                                    <i class="bi bi-robot"></i>
+                                    Video generado con IA (agregar etiqueta)
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Estado -->
+                        <div class="form-group">
+                            <label for="pubEstado" class="form-label">
+                                <i class="bi bi-flag"></i>
+                                Estado
+                            </label>
+                            <select id="pubEstado" class="form-control">
+                                <option value="draft">Borrador</option>
+                                <option value="published">Publicado</option>
+                            </select>
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="form-actions">
+                            <button type="button" class="btn-admin-secondary" onclick="navigateToSection('publicaciones')">
+                                Cancelar
+                            </button>
+                            <button type="submit" class="btn-admin-primary">
+                                <i class="bi bi-check-circle"></i>
+                                Publicar
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </section>
+
+            <!-- COMENTARIOS -->
+            <section class="admin-section" id="section-comentarios">
+                
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h3>Gestión de comentarios</h3>
+                        <div class="filter-options">
+                            <button class="btn-filter active" data-filter="all">Todos</button>
+                            <button class="btn-filter" data-filter="pending">Pendientes</button>
+                            <button class="btn-filter" data-filter="responded">Respondidos</button>
+                        </div>
+                    </div>
+
+                    <div class="comments-list" id="commentsList">
+                        
+                        <!-- Comentario 1 -->
+                        <div class="comment-admin-item">
+                            <div class="comment-admin-header">
+                                <div class="comment-admin-user">
+                                    <div class="comment-avatar">U</div>
+                                    <div>
+                                        <strong>Usuario Demo</strong>
+                                        <small>usuario@demo.com</small>
+                                    </div>
+                                </div>
+                                <div class="comment-admin-meta">
+                                    <span class="comment-date">Hace 1 hora</span>
+                                    <span class="badge-status badge-pending">Pendiente</span>
+                                </div>
+                            </div>
+                            <div class="comment-admin-content">
+                                <p>Excelente información doctor, muy clara y útil para los padres.</p>
+                                <small class="text-muted">En: "El Método Ponseti: Tratamiento del pie equinovaro"</small>
+                            </div>
+                            <div class="comment-admin-actions">
+                                <button class="btn-admin-small btn-reply" onclick="openReplyModal(this)">
+                                    <i class="bi bi-reply"></i>
+                                    Responder
+                                </button>
+                                <button class="btn-admin-small btn-delete">
+                                    <i class="bi bi-trash"></i>
+                                    Eliminar
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Comentario 2 (Respondido) -->
+                        <div class="comment-admin-item">
+                            <div class="comment-admin-header">
+                                <div class="comment-admin-user">
+                                    <div class="comment-avatar">M</div>
+                                    <div>
+                                        <strong>María González</strong>
+                                        <small>maria@email.com</small>
+                                    </div>
+                                </div>
+                                <div class="comment-admin-meta">
+                                    <span class="comment-date">Hace 2 días</span>
+                                    <span class="badge-status badge-responded">Respondido</span>
+                                </div>
+                            </div>
+                            <div class="comment-admin-content">
+                                <p>¿A qué edad se puede iniciar el tratamiento con el método Ponseti?</p>
+                                <small class="text-muted">En: "El Método Ponseti: Tratamiento del pie equinovaro"</small>
+                            </div>
+                            <div class="comment-admin-reply">
+                                <div class="reply-header">
+                                    <i class="bi bi-arrow-return-left"></i>
+                                    <strong>Tu respuesta:</strong>
+                                </div>
+                                <p>El tratamiento puede iniciarse desde la primera semana de vida. Cuanto antes se comience, mejores resultados se obtienen.</p>
+                            </div>
+                            <div class="comment-admin-actions">
+                                <button class="btn-admin-small btn-edit-reply">
+                                    <i class="bi bi-pencil"></i>
+                                    Editar respuesta
+                                </button>
+                                <button class="btn-admin-small btn-delete">
+                                    <i class="bi bi-trash"></i>
+                                    Eliminar
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- USUARIOS -->
+            <section class="admin-section" id="section-usuarios">
+                
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h3>Usuarios registrados</h3>
+                        <input type="text" class="form-control search-input" placeholder="Buscar usuario..." id="searchUsers">
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Usuario</th>
+                                    <th>Email</th>
+                                    <th>Rol</th>
+                                    <th>Registro</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usuariosTable">
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-avatar-sm">JD</div>
+                                            <strong>Juan Demo</strong>
+                                        </div>
+                                    </td>
+                                    <td>usuario@demo.com</td>
+                                    <td><span class="badge-role badge-user">Usuario</span></td>
+                                    <td>Hace 5 días</td>
+                                    <td>
+                                        <button class="btn-icon btn-view" title="Ver">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                        <button class="btn-icon btn-delete" title="Eliminar">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-avatar-sm">MG</div>
+                                            <strong>María González</strong>
+                                        </div>
+                                    </td>
+                                    <td>maria@email.com</td>
+                                    <td><span class="badge-role badge-user">Usuario</span></td>
+                                    <td>Hace 2 semanas</td>
+                                    <td>
+                                        <button class="btn-icon btn-view" title="Ver">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                        <button class="btn-icon btn-delete" title="Eliminar">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- CONFIGURACIÓN -->
+            <section class="admin-section" id="section-configuracion">
+                
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h3>Configuración general</h3>
+                    </div>
+
+                    <form class="admin-form">
+                        <div class="form-group">
+                            <label class="form-label">Nombre del sitio</label>
+                            <input type="text" class="form-control" value="Dr. José Ignacio Martínez Suárez">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Email de contacto</label>
+                            <input type="email" class="form-control" value="joseimartinezs1977@hotmail.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Teléfono de contacto</label>
+                            <input type="tel" class="form-control" value="3233240233">
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-admin-primary">
+                                <i class="bi bi-check-circle"></i>
+                                Guardar cambios
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Modal para responder comentario -->
+    <div class="modal fade" id="replyModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-admin">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="bi bi-reply"></i>
+                        Responder comentario
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="comment-original" id="commentOriginal">
+                        <!-- Se llena dinámicamente -->
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="replyText" class="form-label">Tu respuesta</label>
+                        <textarea id="replyText" class="form-control" rows="4" placeholder="Escribe tu respuesta..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-admin-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn-admin-primary" id="btnSendReply">
+                        <i class="bi bi-send"></i>
+                        Enviar respuesta
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

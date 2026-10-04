@@ -1,0 +1,11 @@
+tareas
+carrusel de fotos del doctor
+publicaciones con sección de comentarios 
+crear un sistema de inicio de sesión 
+usuario no registrado: visualización del portafolio, visualización de las publicaciones del doctor y comentarios
+usuario registrado: visualización del portafolio, visualización de las publicaciones y comentarios, publicación de comentarios 
+admin: visualización del portafolio, visualización de las publicaciones y comentarios, respuesta a comentarios, creación de publicaciones
+publicación de video de referencia echos con inteligencia artificial   
+
+
+mejorar estilos visuales mejorados 

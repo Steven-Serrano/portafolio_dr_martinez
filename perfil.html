@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil | Dr. José Ignacio Martínez Suárez</title>
+    <meta name="description" content="Gestiona tu perfil y preferencias en la plataforma del Dr. José Ignacio Martínez Suárez.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230B3954'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EJM%3C/text%3E%3C/svg%3E">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+<body class="perfil-body">
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <span class="brand-mark">JM</span>
+                    <span class="brand-text">
+                        <strong>Dr. José Ignacio</strong>
+                        <small>Martínez Suárez</small>
+                    </span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#especialidades">Especialidades</a></li>
+                        <li class="nav-item"><a class="nav-link" href="publicaciones.html">Publicaciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#galeria">Galería</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#contacto">Contacto</a></li>
+                    </ul>
+
+                    <div class="navbar-actions" id="navbarActions">
+                        <!-- Se llena dinámicamente con JS -->
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="perfil-main">
+        
+        <!-- HERO DE PERFIL -->
+        <section class="perfil-hero">
+            <div class="container">
+                <div class="perfil-hero-content">
+                    <div class="perfil-avatar-large" id="perfilAvatar">
+                        <span id="avatarInitials">--</span>
+                        <button class="btn-change-avatar" id="btnChangeAvatar" title="Cambiar foto">
+                            <i class="bi bi-camera-fill"></i>
+                        </button>
+                    </div>
+                    <div class="perfil-hero-info">
+                        <h1 id="perfilNombre">Cargando...</h1>
+                        <p class="perfil-email" id="perfilEmail">--</p>
+                        <div class="perfil-badges">
+                            <span class="badge-role" id="perfilRol">Usuario</span>
+                            <span class="badge-member">Miembro desde 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTENIDO DEL PERFIL -->
+        <section class="perfil-content">
+            <div class="container">
+                <div class="row g-4">
+                    
+                    <!-- Sidebar de navegación -->
+                    <div class="col-lg-3">
+                        <div class="perfil-sidebar">
+                            <nav class="perfil-nav">
+                                <button class="perfil-nav-item active" data-section="informacion">
+                                    <i class="bi bi-person-fill"></i>
+                                    <span>Información personal</span>
+                                </button>
+                                <button class="perfil-nav-item" data-section="seguridad">
+                                    <i class="bi bi-shield-lock-fill"></i>
+                                    <span>Seguridad</span>
+                                </button>
+                                <button class="perfil-nav-item" data-section="notificaciones">
+                                    <i class="bi bi-bell-fill"></i>
+                                    <span>Notificaciones</span>
+                                </button>
+                                <button class="perfil-nav-item" data-section="actividad">
+                                    <i class="bi bi-clock-history"></i>
+                                    <span>Actividad</span>
+                                </button>
+                                <button class="perfil-nav-item" data-section="privacidad">
+                                    <i class="bi bi-eye-fill"></i>
+                                    <span>Privacidad</span>
+                                </button>
+                                <div class="perfil-nav-divider"></div>
+                                <button class="perfil-nav-item text-danger" id="btnEliminarCuenta">
+                                    <i class="bi bi-trash-fill"></i>
+                                    <span>Eliminar cuenta</span>
+                                </button>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- Contenido principal -->
+                    <div class="col-lg-9">
+                        
+                        <!-- SECCIÓN: INFORMACIÓN PERSONAL -->
+                        <div class="perfil-section active" id="section-informacion">
+                            <div class="perfil-card">
+                                <div class="perfil-card-header">
+                                    <h2><i class="bi bi-person-fill"></i> Información personal</h2>
+                                    <p>Actualiza tus datos personales</p>
+                                </div>
+
+                                <form id="formInformacion" class="perfil-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="infoNombre" class="form-label">
+                                                <i class="bi bi-person"></i>
+                                                Nombre
+                                            </label>
+                                            <input type="text" id="infoNombre" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="infoApellido" class="form-label">
+                                                <i class="bi bi-person"></i>
+                                                Apellido
+                                            </label>
+                                            <input type="text" id="infoApellido" class="form-control" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="infoEmail" class="form-label">
+                                            <i class="bi bi-envelope"></i>
+                                            Correo electrónico
+                                        </label>
+                                        <input type="email" id="infoEmail" class="form-control" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="infoTelefono" class="form-label">
+                                            <i class="bi bi-telephone"></i>
+                                            Teléfono
+                                        </label>
+                                        <input type="tel" id="infoTelefono" class="form-control" placeholder="300 123 4567">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="infoBio" class="form-label">
+                                            <i class="bi bi-textarea"></i>
+                                            Biografía <span class="optional">(opcional)</span>
+                                        </label>
+                                        <textarea id="infoBio" class="form-control" rows="4" placeholder="Cuéntanos sobre ti..."></textarea>
+                                        <small class="form-text">Máximo 200 caracteres</small>
+                                    </div>
+
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn-perfil-primary">
+                                            <i class="bi bi-check-circle"></i>
+                                            Guardar cambios
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- SECCIÓN: SEGURIDAD -->
+                        <div class="perfil-section" id="section-seguridad">
+                            <div class="perfil-card">
+                                <div class="perfil-card-header">
+                                    <h2><i class="bi bi-shield-lock-fill"></i> Seguridad</h2>
+                                    <p>Cambia tu contraseña y gestiona la seguridad de tu cuenta</p>
+                                </div>
+
+                                <form id="formPassword" class="perfil-form">
+                                    <div class="form-group">
+                                        <label for="currentPassword" class="form-label">
+                                            <i class="bi bi-lock"></i>
+                                            Contraseña actual
+                                        </label>
+                                        <div class="input-with-toggle">
+                                            <input type="password" id="currentPassword" class="form-control" required>
+                                            <button type="button" class="btn-toggle-password" data-target="currentPassword">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="newPassword" class="form-label">
+                                            <i class="bi bi-lock"></i>
+                                            Nueva contraseña
+                                        </label>
+                                        <div class="input-with-toggle">
+                                            <input type="password" id="newPassword" class="form-control" required minlength="8">
+                                            <button type="button" class="btn-toggle-password" data-target="newPassword">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                        </div>
+                                        <div class="password-strength" id="passwordStrength">
+                                            <div class="strength-bar">
+                                                <div class="strength-fill" id="strengthFill"></div>
+                                            </div>
+                                            <span class="strength-text" id="strengthText">Ingresa una contraseña</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="confirmPassword" class="form-label">
+                                            <i class="bi bi-lock"></i>
+                                            Confirmar nueva contraseña
+                                        </label>
+                                        <div class="input-with-toggle">
+                                            <input type="password" id="confirmPassword" class="form-control" required>
+                                            <button type="button" class="btn-toggle-password" data-target="confirmPassword">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                        </div>
+                                        <div class="error-message" id="passwordMatchError"></div>
+                                    </div>
+
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn-perfil-primary">
+                                            <i class="bi bi-shield-check"></i>
+                                            Actualizar contraseña
+                                        </button>
+                                    </div>
+                                </form>
+
+                                <div class="security-info">
+                                    <h3><i class="bi bi-info-circle"></i> Información de seguridad</h3>
+                                    <ul>
+                                        <li><i class="bi bi-check-circle-fill"></i> Usa una contraseña de al menos 8 caracteres</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Combina letras mayúsculas, minúsculas, números y símbolos</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> No uses información personal como contraseña</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Cambia tu contraseña regularmente</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECCIÓN: NOTIFICACIONES -->
+                        <div class="perfil-section" id="section-notificaciones">
+                            <div class="perfil-card">
+                                <div class="perfil-card-header">
+                                    <h2><i class="bi bi-bell-fill"></i> Notificaciones</h2>
+                                    <p>Configura cómo recibes las notificaciones</p>
+                                </div>
+
+                                <div class="notificaciones-list">
+                                    <div class="notificacion-item">
+                                        <div class="notificacion-info">
+                                            <i class="bi bi-chat-dots-fill"></i>
+                                            <div>
+                                                <strong>Respuestas a comentarios</strong>
+                                                <p>Recibe notificaciones cuando alguien responda tus comentarios</p>
+                                            </div>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" id="notifRespuestas" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="notificacion-item">
+                                        <div class="notificacion-info">
+                                            <i class="bi bi-journal-plus"></i>
+                                            <div>
+                                                <strong>Nuevas publicaciones</strong>
+                                                <p>Entérate cuando el doctor publique nuevo contenido</p>
+                                            </div>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" id="notifPublicaciones" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="notificacion-item">
+                                        <div class="notificacion-info">
+                                            <i class="bi bi-heart-fill"></i>
+                                            <div>
+                                                <strong>Likes en comentarios</strong>
+                                                <p>Notificaciones cuando alguien le dé like a tus comentarios</p>
+                                            </div>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" id="notifLikes">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="notificacion-item">
+                                        <div class="notificacion-info">
+                                            <i class="bi bi-envelope-fill"></i>
+                                            <div>
+                                                <strong>Correo electrónico</strong>
+                                                <p>Recibe un resumen semanal por email</p>
+                                            </div>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" id="notifEmail">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="button" class="btn-perfil-primary" id="btnGuardarNotificaciones">
+                                        <i class="bi bi-check-circle"></i>
+                                        Guardar preferencias
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECCIÓN: ACTIVIDAD -->
+                        <div class="perfil-section" id="section-actividad">
+                            <div class="perfil-card">
+                                <div class="perfil-card-header">
+                                    <h2><i class="bi bi-clock-history"></i> Actividad reciente</h2>
+                                    <p>Tu historial de interacciones en la plataforma</p>
+                                </div>
+
+                                <div class="actividad-stats">
+                                    <div class="stat-box">
+                                        <i class="bi bi-chat-dots-fill"></i>
+                                        <div>
+                                            <span class="stat-number" id="statComentarios">0</span>
+                                            <span class="stat-label">Comentarios</span>
+                                        </div>
+                                    </div>
+                                    <div class="stat-box">
+                                        <i class="bi bi-heart-fill"></i>
+                                        <div>
+                                            <span class="stat-number" id="statLikes">0</span>
+                                            <span class="stat-label">Likes dados</span>
+                                        </div>
+                                    </div>
+                                    <div class="stat-box">
+                                        <i class="bi bi-eye-fill"></i>
+                                        <div>
+                                            <span class="stat-number" id="statVisitas">0</span>
+                                            <span class="stat-label">Publicaciones vistas</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="actividad-list" id="actividadList">
+                                    <div class="actividad-item">
+                                        <div class="actividad-icon">
+                                            <i class="bi bi-chat-dots"></i>
+                                        </div>
+                                        <div class="actividad-content">
+                                            <strong>Comentaste en una publicación</strong>
+                                            <p>"Excelente información doctor, muy clara."</p>
+                                            <small>Hace 2 horas</small>
+                                        </div>
+                                    </div>
+                                    <div class="actividad-item">
+                                        <div class="actividad-icon">
+                                            <i class="bi bi-heart"></i>
+                                        </div>
+                                        <div class="actividad-content">
+                                            <strong>Te gustó una publicación</strong>
+                                            <p>"El Método Ponseti: Tratamiento del pie equinovaro"</p>
+                                            <small>Hace 5 horas</small>
+                                        </div>
+                                    </div>
+                                    <div class="actividad-item">
+                                        <div class="actividad-icon">
+                                            <i class="bi bi-person-plus"></i>
+                                        </div>
+                                        <div class="actividad-content">
+                                            <strong>Creaste tu cuenta</strong>
+                                            <p>Te uniste a la plataforma</p>
+                                            <small>Hace 3 días</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECCIÓN: PRIVACIDAD -->
+                        <div class="perfil-section" id="section-privacidad">
+                            <div class="perfil-card">
+                                <div class="perfil-card-header">
+                                    <h2><i class="bi bi-eye-fill"></i> Privacidad</h2>
+                                    <p>Controla quién puede ver tu información</p>
+                                </div>
+
+                                <div class="privacidad-options">
+                                    <div class="privacidad-item">
+                                        <div class="privacidad-info">
+                                            <strong>Perfil público</strong>
+                                            <p>Permite que otros usuarios vean tu nombre y foto</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" id="privPerfilPublico" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="privacidad-item">
+                                        <div class="privacidad-info">
+                                            <strong>Mostrar actividad</strong>
+                                            <p>Otros pueden ver tus comentarios y likes</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" id="privMostrarActividad" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="privacidad-item">
+                                        <div class="privacidad-info">
+                                            <strong>Permitir mensajes</strong>
+                                            <p>Otros usuarios pueden enviarte mensajes directos</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" id="privMensajes">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="button" class="btn-perfil-primary" id="btnGuardarPrivacidad">
+                                        <i class="bi bi-check-circle"></i>
+                                        Guardar configuración
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dr. José Ignacio Martínez Suárez. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL CONFIRMAR ELIMINACIÓN -->
+    <div class="modal fade" id="modalEliminarCuenta" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-perfil">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="bi bi-exclamation-triangle-fill text-danger"></i>
+                        Eliminar cuenta
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro de que deseas eliminar tu cuenta? Esta acción <strong>no se puede deshacer</strong> y perderás todos tus datos.</p>
+                    <div class="form-group mt-3">
+                        <label for="confirmDeleteEmail" class="form-label">
+                            Para confirmar, escribe tu correo electrónico:
+                        </label>
+                        <input type="email" id="confirmDeleteEmail" class="form-control" placeholder="tu@email.com">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-perfil-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn-perfil-danger" id="btnConfirmarEliminar">
+                        <i class="bi bi-trash"></i>
+                        Sí, eliminar mi cuenta
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/perfil.js"></script>
+</body>
+</html>

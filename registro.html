@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta | Dr. José Ignacio Martínez Suárez</title>
+    <meta name="description" content="Regístrate en la plataforma del Dr. José Ignacio Martínez Suárez.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230B3954'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EJM%3C/text%3E%3C/svg%3E">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-body">
+
+    <!-- Fondo animado -->
+    <div class="auth-background">
+        <div class="auth-bg-orb orb-1"></div>
+        <div class="auth-bg-orb orb-2"></div>
+        <div class="auth-bg-orb orb-3"></div>
+        <div class="auth-bg-pattern"></div>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="auth-wrapper">
+        
+        <!-- Panel izquierdo: Branding -->
+        <div class="auth-branding-panel">
+            <div class="branding-content">
+                <a href="index.html" class="brand-link">
+                    <span class="brand-mark-lg">JM</span>
+                </a>
+                <h1 class="branding-title">Únete a nuestra comunidad</h1>
+                <p class="branding-subtitle">Participa, comenta y aprende sobre ortopedia y traumatología</p>
+                
+                <div class="branding-features">
+                    <div class="feature-item">
+                        <i class="bi bi-chat-dots-fill"></i>
+                        <div>
+                            <strong>Comenta publicaciones</strong>
+                            <span>Interactúa con el doctor y otros usuarios</span>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="bi bi-bell-fill"></i>
+                        <div>
+                            <strong>Recibe notificaciones</strong>
+                            <span>Entérate de nuevas publicaciones</span>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="bi bi-bookmark-fill"></i>
+                        <div>
+                            <strong>Guarda contenido</strong>
+                            <span>Accede a tus artículos favoritos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="branding-quote">
+                    <i class="bi bi-quote"></i>
+                    <p>La educación médica es un derecho, no un privilegio. Compartimos conocimiento para mejorar vidas.</p>
+                </div>
+            </div>
+
+            <div class="branding-footer">
+                <p>&copy; 2026 Dr. José Ignacio Martínez Suárez</p>
+                <p>Todos los derechos reservados</p>
+            </div>
+        </div>
+
+        <!-- Panel derecho: Formulario -->
+        <div class="auth-form-panel">
+            <div class="auth-form-container">
+                
+                <!-- Header del formulario -->
+                <div class="auth-form-header">
+                    <div class="auth-form-icon">
+                        <i class="bi bi-person-plus-fill"></i>
+                    </div>
+                    <h2>Crea tu cuenta</h2>
+                    <p>Completa tus datos para unirte a la plataforma</p>
+                </div>
+
+                <!-- Formulario -->
+                <form id="registroForm" class="auth-form" novalidate>
+                    
+                    <!-- Nombre y Apellido -->
+                    <div class="form-row">
+                        <div class="form-group-custom">
+                            <label for="regNombre" class="form-label-custom">
+                                <i class="bi bi-person-fill"></i>
+                                Nombre
+                            </label>
+                            <div class="input-wrapper">
+                                <input 
+                                    type="text" 
+                                    id="regNombre" 
+                                    class="form-input" 
+                                    placeholder="Juan"
+                                    autocomplete="given-name"
+                                    required
+                                >
+                            </div>
+                            <div class="error-message" id="regNombreError"></div>
+                        </div>
+
+                        <div class="form-group-custom">
+                            <label for="regApellido" class="form-label-custom">
+                                <i class="bi bi-person-fill"></i>
+                                Apellido
+                            </label>
+                            <div class="input-wrapper">
+                                <input 
+                                    type="text" 
+                                    id="regApellido" 
+                                    class="form-input" 
+                                    placeholder="Pérez"
+                                    autocomplete="family-name"
+                                    required
+                                >
+                            </div>
+                            <div class="error-message" id="regApellidoError"></div>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group-custom">
+                        <label for="regEmail" class="form-label-custom">
+                            <i class="bi bi-envelope-fill"></i>
+                            Correo electrónico
+                        </label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="email" 
+                                id="regEmail" 
+                                class="form-input" 
+                                placeholder="tu@email.com"
+                                autocomplete="email"
+                                required
+                            >
+                        </div>
+                        <div class="error-message" id="regEmailError"></div>
+                    </div>
+
+                    <!-- Teléfono (opcional) -->
+                    <div class="form-group-custom">
+                        <label for="regTelefono" class="form-label-custom">
+                            <i class="bi bi-telephone-fill"></i>
+                            Teléfono <span class="optional-tag">(opcional)</span>
+                        </label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="tel" 
+                                id="regTelefono" 
+                                class="form-input" 
+                                placeholder="300 123 4567"
+                                autocomplete="tel"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Contraseña -->
+                    <div class="form-group-custom">
+                        <label for="regPassword" class="form-label-custom">
+                            <i class="bi bi-lock-fill"></i>
+                            Contraseña
+                        </label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="password" 
+                                id="regPassword" 
+                                class="form-input" 
+                                placeholder="Mínimo 8 caracteres"
+                                autocomplete="new-password"
+                                required
+                                minlength="8"
+                            >
+                            <button type="button" class="toggle-password-btn" id="toggleRegPassword" aria-label="Mostrar contraseña">
+                                <i class="bi bi-eye-fill"></i>
+                            </button>
+                        </div>
+                        <div class="error-message" id="regPasswordError"></div>
+                        
+                        <!-- Indicador de fortaleza -->
+                        <div class="password-strength" id="passwordStrength">
+                            <div class="strength-bar">
+                                <div class="strength-fill" id="strengthFill"></div>
+                            </div>
+                            <span class="strength-text" id="strengthText">Ingresa una contraseña</span>
+                        </div>
+                    </div>
+
+                    <!-- Confirmar contraseña -->
+                    <div class="form-group-custom">
+                        <label for="regPasswordConfirm" class="form-label-custom">
+                            <i class="bi bi-lock-fill"></i>
+                            Confirmar contraseña
+                        </label>
+                        <div class="input-wrapper">
+                            <input 
+                                type="password" 
+                                id="regPasswordConfirm" 
+                                class="form-input" 
+                                placeholder="Repite tu contraseña"
+                                autocomplete="new-password"
+                                required
+                            >
+                            <button type="button" class="toggle-password-btn" id="toggleRegPasswordConfirm" aria-label="Mostrar contraseña">
+                                <i class="bi bi-eye-fill"></i>
+                            </button>
+                        </div>
+                        <div class="error-message" id="regPasswordConfirmError"></div>
+                    </div>
+
+                    <!-- Términos -->
+                    <div class="form-check-custom terms-check">
+                        <input type="checkbox" id="regTerms" class="form-check-input-custom" required>
+                        <label for="regTerms" class="form-check-label-custom">
+                            Acepto los <a href="terminos.html">términos y condiciones</a> y la <a href="privacidad.html">política de privacidad</a>
+                        </label>
+                    </div>
+                    <div class="error-message" id="regTermsError"></div>
+
+                    <!-- Alertas -->
+                    <div class="auth-alert auth-alert-danger" id="registroAlert" style="display: none;">
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                        <span id="registroAlertMessage"></span>
+                    </div>
+
+                    <div class="auth-alert auth-alert-success" id="registroSuccess" style="display: none;">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span id="registroSuccessMessage"></span>
+                    </div>
+
+                    <!-- Botón submit -->
+                    <button type="submit" class="btn-auth-primary" id="registroSubmitBtn">
+                        <span class="btn-content">
+                            <i class="bi bi-person-plus-fill"></i>
+                            Crear Cuenta
+                        </span>
+                        <span class="btn-loading" style="display: none;">
+                            <span class="auth-spinner"></span>
+                            Creando cuenta...
+                        </span>
+                    </button>
+
+                </form>
+
+                <!-- Separador -->
+                <div class="auth-divider">
+                    <span>O</span>
+                </div>
+
+                <!-- Login -->
+                <div class="auth-switch">
+                    <p>¿Ya tienes una cuenta?</p>
+                    <a href="login.html" class="btn-auth-link">
+                        Iniciar sesión
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Volver -->
+                <div class="auth-back">
+                    <a href="index.html">
+                        <i class="bi bi-arrow-left"></i>
+                        Volver al portafolio
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

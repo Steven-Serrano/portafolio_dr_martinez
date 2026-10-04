@@ -1,0 +1,265 @@
+/* =========================================================
+   PÁGINAS LEGALES - TÉRMINOS Y PRIVACIDAD
+   Dr. José Ignacio Martínez Suárez
+   ========================================================= */
+
+:root {
+    --legal-primary: #0B3954;
+    --legal-accent: #087E8B;
+    --legal-bg: #F5F8FA;
+    --legal-white: #FFFFFF;
+    --legal-text: #1F2937;
+    --legal-text-muted: #6B7280;
+    --legal-border: #E5E7EB;
+    --legal-radius: 16px;
+    --legal-shadow: 0 4px 12px rgba(11, 57, 84, 0.08);
+    --legal-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+.legal-main {
+    padding-top: 80px;
+    background: var(--legal-bg);
+    min-height: 100vh;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.legal-hero {
+    background: linear-gradient(135deg, var(--legal-primary) 0%, var(--legal-accent) 100%);
+    padding: 4rem 0 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.legal-hero::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
+}
+
+.legal-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.legal-hero-content i {
+    font-size: 3.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.legal-hero-content h1 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.legal-hero-content p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* =========================================================
+   CONTENIDO
+   ========================================================= */
+.legal-content {
+    padding: 4rem 0;
+}
+
+.legal-intro {
+    background: var(--legal-white);
+    padding: 2rem;
+    border-radius: var(--legal-radius);
+    box-shadow: var(--legal-shadow);
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--legal-accent);
+}
+
+.legal-intro p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--legal-text);
+    margin-bottom: 1rem;
+}
+
+.legal-intro p:last-child {
+    margin-bottom: 0;
+}
+
+.legal-section {
+    background: var(--legal-white);
+    padding: 2rem;
+    border-radius: var(--legal-radius);
+    box-shadow: var(--legal-shadow);
+    margin-bottom: 1.5rem;
+}
+
+.legal-section h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--legal-primary);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.legal-section h2 i {
+    color: var(--legal-accent);
+    font-size: 1.75rem;
+}
+
+.legal-section h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--legal-primary);
+    margin: 1.5rem 0 0.75rem;
+}
+
+.legal-section p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--legal-text);
+    margin-bottom: 1rem;
+}
+
+.legal-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.legal-section ul li {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+    color: var(--legal-text);
+}
+
+.legal-section ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--legal-accent);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.legal-section strong {
+    color: var(--legal-primary);
+    font-weight: 600;
+}
+
+/* Contact Info Box */
+.contact-info-box {
+    background: var(--legal-bg);
+    padding: 1.5rem;
+    border-radius: var(--legal-radius-sm);
+    margin-top: 1rem;
+}
+
+.contact-info-box p {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.contact-info-box p:last-child {
+    margin-bottom: 0;
+}
+
+.contact-info-box i {
+    color: var(--legal-accent);
+    font-size: 1.25rem;
+}
+
+/* Cookies Table */
+.cookies-table {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.cookie-item {
+    background: var(--legal-bg);
+    padding: 1.25rem;
+    border-radius: var(--legal-radius-sm);
+    border-left: 3px solid var(--legal-accent);
+}
+
+.cookie-item strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--legal-primary);
+    margin-bottom: 0.5rem;
+}
+
+.cookie-item p {
+    font-size: 0.9rem;
+    color: var(--legal-text-muted);
+    margin: 0;
+}
+
+/* Footer Note */
+.legal-footer-note {
+    background: linear-gradient(135deg, rgba(11, 57, 84, 0.05), rgba(8, 126, 139, 0.05));
+    padding: 1.5rem;
+    border-radius: var(--legal-radius);
+    text-align: center;
+    margin-top: 2rem;
+    border: 1px solid var(--legal-border);
+}
+
+.legal-footer-note p {
+    font-size: 0.95rem;
+    color: var(--legal-text);
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .legal-hero {
+        padding: 3rem 0 2rem;
+    }
+
+    .legal-hero-content i {
+        font-size: 2.5rem;
+    }
+
+    .legal-content {
+        padding: 2rem 0;
+    }
+
+    .legal-section {
+        padding: 1.5rem;
+    }
+
+    .legal-section h2 {
+        font-size: 1.25rem;
+    }
+
+    .legal-intro {
+        padding: 1.5rem;
+    }
+}
